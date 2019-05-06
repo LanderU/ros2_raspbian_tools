@@ -15,8 +15,16 @@ RUN apt install -y --no-install-recommends \
     python3-pkg-resources \
     python3-setuptools \
     python3-pyparsing \
+    python3-pip\
     qemu-user-static \
-    software-properties-common
+    software-properties-common\
+    liblog4cxx-dev
+    
+    
+
+RUN pip3 install colcon-common-extensions
+
+
 ENV RASPBERRYPI_CROSS_COMPILE_TOOLCHAIN_PATH /usr/bin
 ENV RASPBERRYPI_CROSS_COMPILE_TOOLCHAIN_PREFIX arm-linux-gnueabihf
 ENV RASPBERRYPI_CROSS_COMPILE_SYSROOT /raspbian_ros2_root/
