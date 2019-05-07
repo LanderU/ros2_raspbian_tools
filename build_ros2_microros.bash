@@ -23,8 +23,9 @@ echo "RASPBERRYPI_CROSS_COMPILE_TOOLCHAIN_PREFIX " $RASPBERRYPI_CROSS_COMPILE_TO
 # hrim_sensor_thermometer_msgs
 # hrim_ui_rc_msgs
 
-colcon build --merge-install --packages-skip-regex complex_msg_subscriber_cpp sensor_msgs\ visualization_msgs int32_subscriber_cpp  string_subscriber_cpp complex_msg_publisher_cpp int32_publisher_cpp string_publisher_cpp rad0_control_cpp\
-    --parallel-workers 16 \
+
+
+colcon build --merge-install --packages-skip-regex complex_msg_publisher_cpp int32_publisher_cpp \ int32_subscriber_cpp complex_msg_subscriber_cpp int32_subscriber_cpp rad0_control_cpp \ string_publisher_cpp string_subscriber_cpp\
     --cmake-args \
     -DBUILD_SHARED_LIBS=ON \
     -DCOMPILING_SERVER=True \
