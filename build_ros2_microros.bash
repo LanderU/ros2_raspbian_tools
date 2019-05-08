@@ -31,7 +31,7 @@ colcon build --merge-install --packages-skip-regex complex_msg_publisher_cpp int
     -DCOMPILING_SERVER=True \
     -DBUILD_TESTING=False \
     -DCMAKE_CXX_STANDARD=14 \
-    -DCMAKE_FIND_ROOT_PATH="/ros2_ws/install_isolated" \
+    -DCMAKE_FIND_ROOT_PATH="/agent_ws/install" \
     -DCMAKE_TOOLCHAIN_FILE="/polly/raspberrypi3-cxx14.cmake" \
     -DPYTHON_INCLUDE_DIR="${RASPBERRYPI_CROSS_COMPILE_SYSROOT}usr/include/python${PYTHON_MAJOR}.${PYTHON_MINOR}m" \
     -DPYTHON_LIBRARY="${RASPBERRYPI_CROSS_COMPILE_SYSROOT}usr/lib/${RASPBERRYPI_CROSS_COMPILE_TOOLCHAIN_PREFIX}/libpython${PYTHON_MAJOR}.${PYTHON_MINOR}m.so" \
