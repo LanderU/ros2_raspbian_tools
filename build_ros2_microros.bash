@@ -25,7 +25,7 @@ echo "RASPBERRYPI_CROSS_COMPILE_TOOLCHAIN_PREFIX " $RASPBERRYPI_CROSS_COMPILE_TO
 
 
 
-colcon build --merge-install --packages-skip-regex complex_msg_publisher_cpp int32_publisher_cpp int32_subscriber_cpp complex_msg_subscriber_cpp int32_subscriber_cpp rad0_control_cpp string_publisher_cpp string_subscriber_cpp\
+colcon build --packages-skip-regex complex_msg_publisher_cpp int32_publisher_cpp int32_subscriber_cpp complex_msg_subscriber_cpp int32_subscriber_cpp rad0_control_cpp string_publisher_cpp string_subscriber_cpp\
     --cmake-args \
     -DBUILD_SHARED_LIBS=ON \
     -DCOMPILING_SERVER=True \
@@ -46,7 +46,6 @@ colcon build --merge-install --packages-skip-regex complex_msg_publisher_cpp int
     -DTinyXML_LIBRARY="${RASPBERRYPI_CROSS_COMPILE_SYSROOT}usr/lib/${RASPBERRYPI_CROSS_COMPILE_TOOLCHAIN_PREFIX}/libtinyxml.so" \
     -DBOOST_INCLUDEDIR="${RASPBERRYPI_CROSS_COMPILE_SYSROOT}usr/include/boost/" \
     -DLog4cxx_INCLUDE_DIR="${RASPBERRYPI_CROSS_COMPILE_SYSROOT}usr/include/log4cxx" \
-    -DLog4cxx_LIBRARY="${RASPBERRYPI_CROSS_COMPILE_SYSROOT}usr/lib/${RASPBERRYPI_CROSS_COMPILE_TOOLCHAIN_PREFIX}/liblog4cxx.so" \
-    -DTHIRDPARTY=ON
+    -DLog4cxx_LIBRARY="${RASPBERRYPI_CROSS_COMPILE_SYSROOT}usr/lib/${RASPBERRYPI_CROSS_COMPILE_TOOLCHAIN_PREFIX}/liblog4cxx.so"
 
     #-DCMAKE_PREFIX_PATH=${RASPBERRYPI_CROSS_COMPILE_SYSROOT}home/pi/opensplice-minimal/share/opensplice/cmake/ \
