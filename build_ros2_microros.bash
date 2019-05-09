@@ -25,7 +25,7 @@ echo "RASPBERRYPI_CROSS_COMPILE_TOOLCHAIN_PREFIX " $RASPBERRYPI_CROSS_COMPILE_TO
 
 
 
-colcon build --packages-skip-regex complex_msg_publisher_cpp int32_publisher_cpp int32_subscriber_cpp complex_msg_subscriber_cpp int32_subscriber_cpp rad0_control_cpp string_publisher_cpp string_subscriber_cpp\
+colcon build --merge-install --packages-skip-regex complex_msg_publisher_cpp int32_publisher_cpp int32_subscriber_cpp complex_msg_subscriber_cpp int32_subscriber_cpp rad0_control_cpp string_publisher_cpp string_subscriber_cpp\
     --cmake-args \
     -DBUILD_SHARED_LIBS=ON \
     -DCOMPILING_SERVER=True \
