@@ -17,13 +17,15 @@ echo "RASPBERRYPI_CROSS_COMPILE_TOOLCHAIN_PATH " $RASPBERRYPI_CROSS_COMPILE_TOOL
 echo "RASPBERRYPI_CROSS_COMPILE_TOOLCHAIN_PREFIX " $RASPBERRYPI_CROSS_COMPILE_TOOLCHAIN_PREFIX
 
 
+
 colcon build --merge-install --packages-skip-regex rqt orocos rviz qt kdl tf2 image_tools robot_state_publisher dummy_robot_bringup intra_process_demo \
-    
+    examples_rclcpp_minimal_action_server  ros1_bridge  pendulum_control  laser_geometry    demo_nodes_cpp \
     --parallel-workers 16 \
     --cmake-args \
     -DCOMPILING_SERVER=True \
     -DBUILD_TESTING=False \
     -DCMAKE_CXX_STANDARD=14 \
+    -DCMAKE_CXX_FLAGS=-pthread \
     -DCMAKE_FIND_ROOT_PATH="/ros2_ws/install_isolated" \
     -DCMAKE_TOOLCHAIN_FILE="/polly/raspberrypi3-cxx14.cmake" \
     -DPYTHON_INCLUDE_DIR="${RASPBERRYPI_CROSS_COMPILE_SYSROOT}usr/include/python${PYTHON_MAJOR}.${PYTHON_MINOR}m" \
@@ -40,5 +42,5 @@ colcon build --merge-install --packages-skip-regex rqt orocos rviz qt kdl tf2 im
     -DBOOST_INCLUDEDIR="${RASPBERRYPI_CROSS_COMPILE_SYSROOT}usr/include/boost/" \
     -DLog4cxx_INCLUDE_DIR="${RASPBERRYPI_CROSS_COMPILE_SYSROOT}usr/include/log4cxx" \
     -DLog4cxx_LIBRARY="${RASPBERRYPI_CROSS_COMPILE_SYSROOT}usr/lib/${RASPBERRYPI_CROSS_COMPILE_TOOLCHAIN_PREFIX}/liblog4cxx.so" \
-    -DTHIRDPARTY=ON
+    -DTHIRDPARTY=ON 
 
