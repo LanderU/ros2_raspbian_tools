@@ -8,22 +8,13 @@ PYTHON_MINOR=5
 export OSPL_HOME=${RASPBERRYPI_CROSS_COMPILE_SYSROOT}home/pi/opensplice-minimal_both
 export PATH=$OSPL_HOME/bin:$PATH
 export LD_LIBRARY_PATH=$OSPL_HOME/lib:${RASPBERRYPI_CROSS_COMPILE_SYSROOT}/lib/arm-linux-gnueabihf/
-#export OSPL_URI=file://$OSPL_HOME/etc/opensplice/config/ospl.xml
+
 
 cd /agent_ws
 
 echo "RASPBERRYPI_CROSS_COMPILE_SYSROOT " $RASPBERRYPI_CROSS_COMPILE_SYSROOT
 echo "RASPBERRYPI_CROSS_COMPILE_TOOLCHAIN_PATH " $RASPBERRYPI_CROSS_COMPILE_TOOLCHAIN_PATH
 echo "RASPBERRYPI_CROSS_COMPILE_TOOLCHAIN_PREFIX " $RASPBERRYPI_CROSS_COMPILE_TOOLCHAIN_PREFIX
-
-#export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:$OSPL_HOME/lib/armv7l.linux-dev:$OSPL_HOME/lib/x86_64.linux-release
-#     --force-cmake-configure \
-#     --only-packages hrim_actuator_gripper_msgs hros_actuation_servomotor_hans_lifecycle hros_actuation_servomotor_hebi_lifecycle  hros_actuation_servomotor_m90pal_lifecycle peak_usbcan \
-
-# hrim_sensor_thermometer_msgs
-# hrim_ui_rc_msgs
-
-
 
 colcon build --merge-install --packages-skip-regex complex_msg_publisher_cpp int32_publisher_cpp int32_subscriber_cpp complex_msg_subscriber_cpp int32_subscriber_cpp rad0_control_cpp string_publisher_cpp string_subscriber_cpp\
     --cmake-args \
@@ -48,4 +39,3 @@ colcon build --merge-install --packages-skip-regex complex_msg_publisher_cpp int
     -DLog4cxx_INCLUDE_DIR="${RASPBERRYPI_CROSS_COMPILE_SYSROOT}usr/include/log4cxx" \
     -DLog4cxx_LIBRARY="${RASPBERRYPI_CROSS_COMPILE_SYSROOT}usr/lib/${RASPBERRYPI_CROSS_COMPILE_TOOLCHAIN_PREFIX}/liblog4cxx.so"
 
-    #-DCMAKE_PREFIX_PATH=${RASPBERRYPI_CROSS_COMPILE_SYSROOT}home/pi/opensplice-minimal/share/opensplice/cmake/ \
