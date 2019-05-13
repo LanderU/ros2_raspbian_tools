@@ -16,12 +16,6 @@ echo "RASPBERRYPI_CROSS_COMPILE_SYSROOT " $RASPBERRYPI_CROSS_COMPILE_SYSROOT
 echo "RASPBERRYPI_CROSS_COMPILE_TOOLCHAIN_PATH " $RASPBERRYPI_CROSS_COMPILE_TOOLCHAIN_PATH
 echo "RASPBERRYPI_CROSS_COMPILE_TOOLCHAIN_PREFIX " $RASPBERRYPI_CROSS_COMPILE_TOOLCHAIN_PREFIX
 
-#export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:$OSPL_HOME/lib/armv7l.linux-dev:$OSPL_HOME/lib/x86_64.linux-release
-#     --force-cmake-configure \
-#     --only-packages hrim_actuator_gripper_msgs hros_actuation_servomotor_hans_lifecycle hros_actuation_servomotor_hebi_lifecycle  hros_actuation_servomotor_m90pal_lifecycle peak_usbcan \
-
-# hrim_sensor_thermometer_msgs
-# hrim_ui_rc_msgs
 
 colcon build --merge-install --packages-skip-regex rqt orocos rviz qt kdl tf2 image_tools robot_state_publisher dummy_robot_bringup intra_process_demo \
     
@@ -47,4 +41,4 @@ colcon build --merge-install --packages-skip-regex rqt orocos rviz qt kdl tf2 im
     -DLog4cxx_INCLUDE_DIR="${RASPBERRYPI_CROSS_COMPILE_SYSROOT}usr/include/log4cxx" \
     -DLog4cxx_LIBRARY="${RASPBERRYPI_CROSS_COMPILE_SYSROOT}usr/lib/${RASPBERRYPI_CROSS_COMPILE_TOOLCHAIN_PREFIX}/liblog4cxx.so" \
     -DTHIRDPARTY=ON
-    #-DCMAKE_PREFIX_PATH=${RASPBERRYPI_CROSS_COMPILE_SYSROOT}home/pi/opensplice-minimal/share/opensplice/cmake/ \
+
