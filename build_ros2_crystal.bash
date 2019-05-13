@@ -8,7 +8,7 @@ PYTHON_MINOR=5
 export OSPL_HOME=${RASPBERRYPI_CROSS_COMPILE_SYSROOT}home/pi/opensplice-minimal_both
 export PATH=$OSPL_HOME/bin:$PATH
 export LD_LIBRARY_PATH=$OSPL_HOME/lib:${RASPBERRYPI_CROSS_COMPILE_SYSROOT}/lib/arm-linux-gnueabihf/
-#export OSPL_URI=file://$OSPL_HOME/etc/opensplice/config/ospl.xml
+
 
 cd /ros2_ws
 
