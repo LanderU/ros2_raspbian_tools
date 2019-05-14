@@ -44,3 +44,5 @@ colcon build --merge-install --packages-skip-regex rqt orocos rviz qt kdl tf2 im
     -DLog4cxx_LIBRARY="${RASPBERRYPI_CROSS_COMPILE_SYSROOT}usr/lib/${RASPBERRYPI_CROSS_COMPILE_TOOLCHAIN_PREFIX}/liblog4cxx.so" \
     -DTHIRDPARTY=ON 
 
+echo Building HRIM:
+pip3 install hrim
