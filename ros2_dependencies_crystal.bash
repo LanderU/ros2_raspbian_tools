@@ -9,7 +9,7 @@ apt-get update
 apt-get -y --no-install-recommends install dirmngr
 
 echo "deb http://packages.ros.org/ros/ubuntu `lsb_release -cs` main" | tee /etc/apt/sources.list.d/ros-latest.list
-#apt-key adv --keyserver ha.pool.sks-keyservers.net --recv-keys 421C365BD9FF1F717815A3895523BAEEB01FA116
+apt-key adv --keyserver ha.pool.sks-keyservers.net --recv-keys 421C365BD9FF1F717815A3895523BAEEB01FA116
 
 apt-get update
 apt-get -y install git wget curl libxslt-dev libxml2-dev
