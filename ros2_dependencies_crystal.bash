@@ -12,7 +12,7 @@ echo "deb http://packages.ros.org/ros/ubuntu `lsb_release -cs` main" | tee /etc/
 apt-key adv --keyserver ha.pool.sks-keyservers.net --recv-keys 421C365BD9FF1F717815A3895523BAEEB01FA116
 
 apt-get update
-apt-get -y install git wget curl
+apt-get -y install git wget curl libxslt-dev libxml2-dev
 
 apt -y install -q --no-install-recommends build-essential cppcheck \
   cmake libopencv-dev python-empy python3-catkin-pkg-modules python3-dev \
