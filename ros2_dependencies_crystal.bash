@@ -13,7 +13,7 @@ counter=1
 while [ ! "$(apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116)" ]; do /bin/sleep 2; if [ $counter -eq 3 ]; then break;else counter=$((counter+1)); fi done
 
 apt-get update
-apt-get -y install git wget curl libxslt-dev libxml2-dev
+apt-get -y install git wget curl libxslt-dev libxml2-dev libasio-dev
 
 apt -y install -q --no-install-recommends build-essential cppcheck \
   cmake libopencv-dev python-empy python3-catkin-pkg-modules python3-dev \
@@ -38,7 +38,7 @@ python3 -m pip install flake8 flake8-blind-except flake8-builtins \
 apt -y install -q --no-install-recommends python3-pytest python3-pytest-cov python3-pytest-runner
 python3 -m pip install pytest pytest-cov pytest-runner
 python3 -m pip install pytest-repeat pytest-rerunfailures
-apt -y install -q --no-install-recommends libasio-dev libtinyxml2-dev
+apt -y install -q --no-install-recommends  libtinyxml2-dev
 apt -y install -q --no-install-recommends libexpat1-dev libpcre3-dev \
                 libsqlite3-dev zlib1g-dev
 apt -y install -q --no-install-recommends libcurl4-openssl-dev libfreetype6-dev \
