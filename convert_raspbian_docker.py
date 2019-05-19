@@ -86,22 +86,22 @@ def generate_tarball(root_partition_image, force=False):
             os.mkdir(container_directory)
         except FileExistsError:
             pass
-        cmd = ['sudo', 'umount', container_directory]
+        cmd = ['umount', container_directory]
         subprocess.call(cmd, stderr=subprocess.DEVNULL)
 
-        cmd = ['sudo', 'mount', '-o', 'ro,loop', root_partition_image, container_directory]
+        cmd = ['mount', '-o', 'ro,loop', root_partition_image, container_directory]
         subprocess.call(cmd)
 
         with open(tarball_filename, 'wb') as f:
-            cmd = ['sudo', 'tar', '-C', container_directory, '-c', '.']
+            cmd = ['tar', '-C', container_directory, '-c', '.']
             process = subprocess.Popen(cmd, stdout=subprocess.PIPE)
             for chunk in iter(lambda: process.stdout.read(1024), b''):
                 f.write(chunk)
 
-        cmd = ['sudo', 'tar', '-C', container_directory, '-c', '.', '-f', tarball_filename]
+        cmd = ['tar', '-C', container_directory, '-c', '.', '-f', tarball_filename]
         subprocess.call(cmd)
 
-        cmd = ['sudo', 'umount', container_directory]
+        cmd = ['umount', container_directory]
         subprocess.call(cmd, stderr=subprocess.DEVNULL)
 
         os.rmdir(container_directory)
